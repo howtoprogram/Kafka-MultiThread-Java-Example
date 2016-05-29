@@ -22,7 +22,7 @@ public final class SingleConsumerMain {
     t1.start();
 
     // Start group of Notification Consumer Thread
-    NotificationConsumerGroup consumers = new NotificationConsumerGroup(brokers, groupId, topic);
+    NotificationConsumer consumers = new NotificationConsumer(brokers, groupId, topic);
 
     consumers.execute(numberOfThread);
 

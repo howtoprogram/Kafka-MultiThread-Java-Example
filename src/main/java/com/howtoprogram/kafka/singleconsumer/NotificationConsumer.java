@@ -11,14 +11,14 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
-public class NotificationConsumerGroup {
+public class NotificationConsumer {
 
   private final KafkaConsumer<String, String> consumer;
   private final String topic;
   // Threadpool of consumers
   private ExecutorService executor;
 
-  public NotificationConsumerGroup(String brokers, String groupId, String topic) {
+  public NotificationConsumer(String brokers, String groupId, String topic) {
     Properties prop = createConsumerConfig(brokers, groupId);
     this.consumer = new KafkaConsumer<>(prop);
     this.topic = topic;
